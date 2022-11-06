@@ -5,20 +5,20 @@
 		"aws_region": "ap-southeast-1"
 	}, 
 	"secrets": {}, 
-	#"extensions": [
-	#	{
-	#		"name": "chaosiq", 
-	#		"objective_id": "d651aa4d-1fa0-4e0f-aec4-09014e42dca1", 
-	#		"verification": 
-	#		{
-	#			"id": "dbac81eb-7c96-4905-ab27-65e4d89121f1", 
-	#			"duration-of-conditions": 240, 
-	#			"frequency-of-measurement": 2
-	#		}, 
-	#		"experiment_id": "37e13db2-603f-47c9-bc26-84fee6568bf5", 
-	#		"team_id": "00d98922-fc7e-4d4a-bb58-6a738239d462", 
-	#		"org_id": "47324fd7-432b-4ea7-8820-c0f061c1d237"
-	#	}], 
+	"extensions": [
+		{
+			"name": "chaosiq", 
+			"objective_id": "d651aa4d-1fa0-4e0f-aec4-09014e42dca1", 
+			"verification": 
+			{
+				"id": "dbac81eb-7c96-4905-ab27-65e4d89121f1", 
+				"duration-of-conditions": 240, 
+				"frequency-of-measurement": 2
+			}, 
+			"experiment_id": "37e13db2-603f-47c9-bc26-84fee6568bf5", 
+			"team_id": "00d98922-fc7e-4d4a-bb58-6a738239d462", 
+			"org_id": "47324fd7-432b-4ea7-8820-c0f061c1d237"
+		}], 
 	"tags": [], 
 	"steady-state-hypothesis": {
 		"title": "Availability of Application", 
