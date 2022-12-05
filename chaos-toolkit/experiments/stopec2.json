@@ -1,0 +1,31 @@
+{
+    "title": "Running Chaos Toolkit to stop EC2 instance",
+    "description": "N/A",
+    "tags": [],
+    "steady-state-hypothesis": {
+        "title": "Current EC2 is RUNNING",
+        "probes": [
+            {
+                "type": "probe",
+                "name": "instance_state",
+                "provider": {
+                    "type": "python",
+                    "module": "chaosaws.ec2.probes",
+                    "func": "instance_state",
+                    "arguments": {
+                        "state": "running",
+                        "instance_ids": [
+                            "i-053eef70b76126b42"
+                        ],
+                        "filters": []
+                    }
+                },
+                "tolerance": true
+            }
+        ]
+    },
+    "method": [],
+    "configuration": {
+        "aws_region": "ap-southeast-1"
+    }
+}
