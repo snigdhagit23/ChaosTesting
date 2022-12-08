@@ -38,5 +38,25 @@
                 "after": 10
             }
         }
+    ],
+    "method": [
+        {
+            "type": "action",
+            "name": "scale-deployment",
+            "provider": {
+                "type": "python",
+                "module": "chaosk8s.deployment.actions",
+                "func": "scale_deployment",
+                "arguments": {
+                    "label_selector": "app=nginx",
+                    "name_pattern": "nginx-to-scaleout-[0-9].*$",
+                    "rand": true,
+                    "replicas": 3
+                }
+            },
+            "pauses": {
+                "after": 10
+            }
+        }
     ]
 }
