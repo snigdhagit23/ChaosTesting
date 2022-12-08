@@ -14,7 +14,7 @@
                     "module": "chaosk8s.probes",
                     "func": "deployment_available_and_healthy",
                     "arguments": {
-                        "name": "nginx"
+                        "name": "nginx-to-scaleout"
                     }
                 }
             }
@@ -30,7 +30,7 @@
                 "func": "terminate_pods",
                 "arguments": {
                     "label_selector": "app=nginx",
-                    "name_pattern": "nginx-[0-9].*$",
+                    "name_pattern": "nginx-to-scaleout-[0-9].*$",
                     "rand": true
                 }
             },
