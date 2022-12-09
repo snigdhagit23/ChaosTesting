@@ -47,7 +47,7 @@
 			"type": "http",
 			"url": "http://13.213.244.18/cafe/"
 		}
-	}
+	},
 	{
 		"name": "detach-random-volume",
 		"type": "action",
