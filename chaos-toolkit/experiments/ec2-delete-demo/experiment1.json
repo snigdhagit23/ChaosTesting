@@ -45,7 +45,7 @@
 		"name": "website-must-still-respond",
 		"provider": {
 			"type": "http",
-			"url": "http://13.232.126.110/cafe/"
+			"url": "http://43.204.255.37/cafe/"
 		}
 	},
 	{
@@ -83,7 +83,7 @@
 		"name": "website-must-still-respond",
 		"provider": {
 			"type": "http",
-			"url": "http://13.232.126.110/cafe/"
+			"url": "http://43.204.255.37/cafe/"
 		}
 	},
 	{
@@ -106,7 +106,7 @@
 		"name": "website-must-still-respond",
 		"provider": {
 			"type": "http",
-			"url": "http://13.232.126.110/cafe/"
+			"url": "http://43.204.255.37/cafe/"
 		}
 	}
 	]
