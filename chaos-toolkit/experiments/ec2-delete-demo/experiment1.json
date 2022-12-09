@@ -1,52 +1,29 @@
-{"title": "Availability of Application when Stop an AWS EC2 instance", 
+{
+	"title": "Availability of Application when Stop an AWS EC2 instance", 
 	"description": "N/A", 
-	"configuration": {
-		"aws_region": "ap-southeast-1"
-	}, 
-	"secrets": {}, 
-	"extensions": [
-		{
-			"name": "chaosiq", 
-			"objective_id": "d651aa4d-1fa0-4e0f-aec4-09014e42dca1", 
-			"verification": 
-			{
-				"id": "dbac81eb-7c96-4905-ab27-65e4d89121f1", 
-				"duration-of-conditions": 240, 
-				"frequency-of-measurement": 2
-			}, 
-			"experiment_id": "37e13db2-603f-47c9-bc26-84fee6568bf5", 
-			"team_id": "00d98922-fc7e-4d4a-bb58-6a738239d462", 
-			"org_id": "47324fd7-432b-4ea7-8820-c0f061c1d237"
-		}], 
 	"tags": [], 
 	"steady-state-hypothesis": {
-		"title": "Availability of Application", 
+		"title": "Current EC2 is RUNNING",
 		"probes": [
 		{
-			"name": "http-response-status-code-is", 
-			"type": "probe", 
+			"type": "probe",
+			"name": "instance_state",
 			"provider": {
-				"type": "python", 
-				"module": "chaoscloud.probes.http", 
-				"func": "read_http_status_code", 
+				"type": "python",
+				"module": "chaosaws.ec2.probes",
+				"func": "instance_state",
 				"arguments": {
-					"url": "http://13.213.244.18/cafe/"
-					}
-				}, 
-			"tolerance": {
-				"name": "url-status-must-be", 
-				"type": "probe", 
-				"provider": {
-					"type": "python", 
-					"module": "chaoscloud.tolerances.http", 
-					"func": "status_must_be", 
-					"arguments": {
-						"expected": 200
-					}
+					"state": "running",
+					"instance_ids": [
+					    "i-053eef70b76126b42"
+					],
+					"filters": []
 				}
-			}
-		}]
-	}, 
+			},
+			"tolerance": true
+		}
+		]
+	},
 	"method": [
 	{
 		"name": "stop-instance", 
@@ -64,8 +41,13 @@
 		}
 	},
 	{
-		"ref": "http-response-status-code-is"
-	},
+		"type": "probe",
+		"name": "website-must-still-respond",
+		"provider": {
+			"type": "http",
+			"url": "http://13.213.244.18/cafe/"
+		}
+	}
 	{
 		"name": "detach-random-volume",
 		"type": "action",
@@ -97,9 +79,6 @@
 		}
 	},
 	{
-		"ref": "http-response-status-code-is"
-	},
-	{
 		"type": "probe",
 		"name": "website-must-still-respond",
 		"provider": {
@@ -121,9 +100,6 @@
 		"pauses": {
 			"after": 10
 		}
-	},
-	{
-		"ref": "http-response-status-code-is"
 	},
 	{
 		"type": "probe",
