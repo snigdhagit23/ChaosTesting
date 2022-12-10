@@ -14,7 +14,7 @@
                     "module": "chaosk8s.probes",
                     "func": "deployment_available_and_healthy",
                     "arguments": {
-                        "name": "nginx"
+                        "name": "ecsdemo-frontend"
                     }
                 }
             }
@@ -29,7 +29,7 @@
               "module": "chaosk8s.deployment.actions",
               "func": "delete_deployment",
               "arguments": {
-                "name": "nginx"
+                "name": "ecsdemo-frontend"
               }
             }
           }          
