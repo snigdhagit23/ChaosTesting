@@ -29,9 +29,7 @@
                 "module": "chaosk8s.pod.actions",
                 "func": "terminate_pods",
                 "arguments": {
-                    "label_selector": "app=ecsdemo-frontend",
-                    "name_pattern": "ecsdemo-frontend-5744c78747-4xddv",
-                    "rand": true
+                    "name": "ecsdemo-frontend-5744c78747-hnfsf"
                 }
             },
             "pauses": {
