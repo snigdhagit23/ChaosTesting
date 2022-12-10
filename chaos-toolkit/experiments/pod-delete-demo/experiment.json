@@ -14,7 +14,7 @@
                     "module": "chaosk8s.probes",
                     "func": "deployment_available_and_healthy",
                     "arguments": {
-                        "name": "nginx-to-scaleout"
+                        "name": "ecsdemo-frontend"
                     }
                 }
             }
@@ -23,14 +23,14 @@
     "method": [
         {
             "type": "action",
-            "name": "terminate-nginx-pod",
+            "name": "terminate-pod",
             "provider": {
                 "type": "python",
                 "module": "chaosk8s.pod.actions",
                 "func": "terminate_pods",
                 "arguments": {
-                    "label_selector": "app=nginx",
-                    "name_pattern": "nginx-to-scaleout-[0-9].*$",
+                    "label_selector": "app=ecsdemo-frontend",
+                    "name_pattern": "ecsdemo-frontend-[0-9].*$",
                     "rand": true
                 }
             },
@@ -48,8 +48,8 @@
                 "module": "chaosk8s.deployment.actions",
                 "func": "scale_deployment",
                 "arguments": {
-                    "name": "nginx-to-scaleout",
-                    "replicas": 3
+                    "name": "ecsdemo-frontend",
+                    "replicas": 4
                 }
             },
             "pauses": {
