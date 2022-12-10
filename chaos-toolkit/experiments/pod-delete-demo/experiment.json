@@ -30,7 +30,7 @@
                 "func": "terminate_pods",
                 "arguments": {
                     "label_selector": "app=ecsdemo-frontend",
-                    "name_pattern": "ecsdemo-frontend-[0-9].*$",
+                    "name_pattern": "ecsdemo-frontend-5744c78747-4xddv",
                     "rand": true
                 }
             },
