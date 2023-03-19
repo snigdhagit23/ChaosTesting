@@ -33,7 +33,6 @@
 			"module": "chaosaws.ec2.actions", 
 			"func": "stop_instance", 
 			"arguments": {
-				"az": "us-west-2",
 				"instance_id": "i-02da8753075efa796"
 			}
 		},
@@ -72,7 +71,6 @@
 		  "module": "chaosaws.ec2.actions",
 		  "func": "start_instances",
 		  "arguments": {
-			"az": "us-west-2",
 			"instance_ids": ["i-02da8753075efa796"]
 		}
 		},
