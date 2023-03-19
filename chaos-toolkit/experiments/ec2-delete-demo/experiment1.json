@@ -13,6 +13,7 @@
 				"module": "chaosaws.ec2.probes",
 				"func": "instance_state",
 				"arguments": {
+					"az": "us-west-2"
 					"state": "running",
 					"instance_ids": [
 					    "i-02da8753075efa796"
