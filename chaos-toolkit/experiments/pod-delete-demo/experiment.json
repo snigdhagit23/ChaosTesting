@@ -29,7 +29,7 @@
                 "module": "chaosk8s.pod.actions",
                 "func": "terminate_pods",
                 "arguments": {
-                    "name": "ecsdemo-frontend-5744c78747-hnfsf"
+                    "name": "ecsdemo-crystal-69bd6dbf88-4w4p7"
                 }
             },
             "pauses": {
