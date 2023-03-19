@@ -13,7 +13,6 @@
 				"module": "chaosaws.ec2.probes",
 				"func": "instance_state",
 				"arguments": {
-					"az": "us-west-2",
 					"state": "running",
 					"instance_ids": [
 					    "i-02da8753075efa796"
@@ -34,6 +33,7 @@
 			"module": "chaosaws.ec2.actions", 
 			"func": "stop_instance", 
 			"arguments": {
+				"az": "us-west-2",
 				"instance_id": "i-02da8753075efa796"
 			}
 		},
@@ -57,6 +57,7 @@
 		  "module": "chaosaws.ec2.actions",
 		  "func": "detach_random_volume",
 		  "arguments": {
+			"az": "us-west-2",
 			"instance_ids": ["i-02da8753075efa796"]
 		 }
 		},
@@ -72,6 +73,7 @@
 		  "module": "chaosaws.ec2.actions",
 		  "func": "start_instances",
 		  "arguments": {
+			"az": "us-west-2",
 			"instance_ids": ["i-02da8753075efa796"]
 		}
 		},
@@ -94,7 +96,8 @@
 		  "type": "python",
 		  "module": "chaosaws.ec2.actions",
 		  "func": "attach_volume",
-		  "arguments": {
+		  "arguments": {			
+			"az": "us-west-2",
 			"instance_ids": ["i-02da8753075efa796"]
 		 }
 		},
