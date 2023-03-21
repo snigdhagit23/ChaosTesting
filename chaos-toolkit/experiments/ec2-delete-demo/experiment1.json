@@ -15,7 +15,7 @@
 				"arguments": {
 					"state": "running",
 					"instance_ids": [
-					    "i-02da8753075efa796"
+					    "i-0a4a90f3842c0214e"
 					],
 					"filters": []
 				}
@@ -33,7 +33,7 @@
 			"module": "chaosaws.ec2.actions", 
 			"func": "stop_instance", 
 			"arguments": {
-				"instance_id": "i-02da8753075efa796"
+				"instance_id": "i-0a4a90f3842c0214e"
 			}
 		},
 		"pauses": {
@@ -45,7 +45,7 @@
 		"name": "website-must-still-respond",
 		"provider": {
 			"type": "http",
-			"url": "http://3.13.17.32/cafe/"
+			"url": "http://3.1.147.209/cafe/"
 		}
 	},
 	{
@@ -56,7 +56,7 @@
 		  "module": "chaosaws.ec2.actions",
 		  "func": "detach_random_volume",
 		  "arguments": {
-			"instance_ids": ["i-02da8753075efa796"]
+			"instance_ids": ["i-0a4a90f3842c0214e"]
 		 }
 		},
 		"pauses": {
@@ -71,7 +71,7 @@
 		  "module": "chaosaws.ec2.actions",
 		  "func": "start_instances",
 		  "arguments": {
-			"instance_ids": ["i-02da8753075efa796"]
+			"instance_ids": ["i-0a4a90f3842c0214e"]
 		}
 		},
 		"pauses": {
@@ -83,7 +83,7 @@
 		"name": "website-must-still-respond",
 		"provider": {
 			"type": "http",
-			"url": "http://3.13.17.32/cafe/"
+			"url": "http://3.1.147.209/cafe/"
 		}
 	},
 	{
@@ -94,7 +94,7 @@
 		  "module": "chaosaws.ec2.actions",
 		  "func": "attach_volume",
 		  "arguments": {	
-			"instance_ids": ["i-02da8753075efa796"]
+			"instance_ids": ["i-0a4a90f3842c0214e"]
 		 }
 		},
 		"pauses": {
@@ -106,7 +106,7 @@
 		"name": "website-must-still-respond",
 		"provider": {
 			"type": "http",
-			"url": "http://3.13.17.32/cafe/"
+			"url": "http://3.1.147.209/cafe/"
 		}
 	}
 	]
